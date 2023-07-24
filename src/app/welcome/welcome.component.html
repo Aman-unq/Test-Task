@@ -1,0 +1,20 @@
+<!-- <h2>welcome {{user.firstname}} {{user.lastname}}</h2> -->
+<header>
+  <h1>HOME</h1>
+  <button (click)="logout()">Logout</button>
+</header>
+  <div class="carousel-item active">
+    <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp" class="d-block w-100" alt="Sunset Over the City"/> -->
+   <img src="../../assets/marvin-meyer-SYTO3xs06fU-unsplash.jpg" class="img-fluid">
+    <div class="carousel-caption d-none d-md-block fw-bolder">
+      <p >
+        Welcome! <span style="color: red;">{{ user.firstname }} {{ user.lastname }}</span> We are excited to have you
+        here. Explore our website and discover amazing content.
+      </p>
+    </div>
+  </div>
+<app-popup
+  *ngIf="sessionPopupVisible"
+  (onContinue)="continueSession()"
+  (onLogout)="endSession()"
+></app-popup>

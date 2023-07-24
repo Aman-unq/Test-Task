@@ -1,0 +1,117 @@
+<div class="container-fluid h-custom">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-md-9 col-lg-6 col-xl-7">
+      <img
+        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+        class="img-fluid"
+        alt="Sample image"
+      />
+    </div>
+    <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+      <form [formGroup]="signupForm" (ngSubmit)="signupData()">
+        <h3 class="text-center mt-2">SIGN UP</h3>
+        <div class="form-group">
+          <label class="fw-bold">First Name</label>
+          <input
+            type="text"
+            formControlName="firstname"
+            class="form-control mb-3 mt-3"
+            placeholder="Enter First Name"
+          />
+          <div
+            *ngIf="f['firstname'].touched && f['firstname'].invalid"
+            class="fw-bold text-danger"
+          >
+            <p
+              *ngIf="f['firstname'].errors && f['firstname'].errors['required']"
+            >
+              First Name is required.
+            </p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="fw-bold">Last Name</label>
+          <input
+            type="text"
+            formControlName="lastname"
+            class="form-control mb-3 mt-3"
+            placeholder="Enter Last Name"
+          />
+          <div
+            *ngIf="f['lastname'].touched && f['lastname'].invalid"
+            class="fw-bold text-danger"
+          >
+            <p *ngIf="f['lastname'].errors && f['lastname'].errors['required']">
+              Last Name is required.
+            </p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="fw-bold">Email</label>
+          <input
+            type="email"
+            formControlName="email"
+            class="form-control mb-3 mt-3"
+            placeholder="Enter Email"
+          />
+          <div
+            *ngIf="f['email'].touched && f['email'].invalid"
+            class="fw-bold text-danger"
+          >
+            <p *ngIf="f['email'].errors && f['email'].errors['required']">
+              Email is required.
+            </p>
+
+            <p *ngIf="f['email'].touched &&f['email'].hasError('uniqueEmail')">
+              Email is already taken.
+            </p>
+            <p *ngIf="f['email'].errors && f['email'].errors['email']">
+              Please, enter valid email address.
+            </p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="fw-bold">Password</label>
+          <input
+            type="password"
+            formControlName="password"
+            class="form-control mb-3 mt-3"
+            placeholder="Enter Password"
+          />
+          <div
+            *ngIf="f['password'].touched && f['password'].invalid"
+            class="fw-bold text-danger"
+          >
+            <p *ngIf="f['password'].errors && f['password'].errors['required']">
+              Password is required.
+            </p>
+            <p
+              *ngIf="f['password'].errors && f['password'].errors['minlength']"
+            >
+              Password must be 8 characters long.
+            </p>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          [disabled]="signupForm.invalid"
+          class="btn btn-primary"
+        >
+          Register
+        </button>
+        <div class="mt-2">
+          Already Registered?
+          <a
+            routerLink="/login"
+            class="fw-bold link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+            >Login</a
+          >
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="popup-overlay">
+  <div class="popup">
+    <h3>Your session is about to expire!</h3>
+    <p>Click "<span class="fw-bold">Continue</span>" to stay logged in or "<span class="fw-bold">Logout</span>" to end the session.</p>
+    <p><span class="fw-bold">Time remaining:</span> {{ remainingTime }} seconds</p>
+    <button class="btn btn-success" (click)="onContinueClick()">Continue</button>
+    <button class="btn btn-danger" (click)="onLogoutClick()">Logout</button>
+  </div>
+</div>
