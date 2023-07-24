@@ -1,25 +1,4 @@
 {
   "signupdata": [
-    {
-      "firstname": "New",
-      "lastname": "Test",
-      "email": "t@gmail.com",
-      "password": "12345678",
-      "id": 1
-    },
-    {
-      "firstname": "first",
-      "lastname": "test2",
-      "email": "t1@gmail.com",
-      "password": "12345678",
-      "id": 2
-    },
-    {
-      "firstname": "New",
-      "lastname": "Employee",
-      "email": "new@gmail.com",
-      "password": "12345678",
-      "id": 3
-    }
   ]
 }
